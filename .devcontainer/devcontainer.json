@@ -1,0 +1,35 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/base:1-ubuntu-22.04",
+  "features": {
+    "ghcr.io/trunk-io/devcontainer-feature/trunk:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "EditorConfig.EditorConfig",
+        "redhat.vscode-yaml",
+        "remcohaszing.schemastore",
+        "tamasfe.even-better-toml",
+        "christian-kohler.path-intellisense"
+      ],
+      "settings": {
+        "editorconfig.generateAuto": false,
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "files.readonlyInclude": {
+          ".editorconfig": true,
+          ".gitignore": true,
+          "CHANGELOG.md": true
+        },
+        "editor.defaultFormatter": "trunk.io",
+        "editor.formatOnSave": true,
+        "trunk.autoInit": false,
+        "trunk.inlineDecorators": false,
+        "yaml.extension.recommendations": false,
+        "yaml.format.enable": false,
+        "yaml.validate": false,
+        "path-intellisense.autoSlashAfterDirectory": true
+      }
+    }
+  },
+  "updateContentCommand": "curl 'https://www.toptal.com/developers/gitignore/api/linux,git,zsh,visualstudiocode' > .gitignore && curl 'https://raw.githubusercontent.com/andreilgeorgescu/devcontainer-base/main/.editorconfig' > .editorconfig && trunk init --lock --no-to-all && true && trunk install"
+}
